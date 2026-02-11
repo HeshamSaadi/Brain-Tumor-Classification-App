@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroScan AI | Diagnostic Station</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css' ) }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>NeuroScan AI</h1>
+    <div class="subtitle">Deep Learning Diagnostic Station</div>
+
+    <form id="main-form">
+        <label class="upload-box" for="file-input">
+            <div id="upload-text">Upload Patient MRI Scan</div>
+            <input type="file" id="file-input" name="file" accept="image/*" required>
+        </label>
+
+        <div class="preview-container" id="preview-wrapper">
+            <div class="scanner-line" id="scanner"></div>
+            <img id="image-preview" src="#" alt="MRI Preview">
+        </div>
+
+        <button type="submit" class="btn" id="submit-btn">Begin Analysis</button>
+    </form>
+
+    <div id="result-area">
+        <div class="res-label">Classification Result</div>
+        <div id="prediction-text" class="res-value"></div>
+        <div id="confidence-text" style="color: #94a3b8;"></div>
+    </div>
+</div>
+
+<!-- Link to JS -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
